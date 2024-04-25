@@ -1,0 +1,24 @@
+# servicefoundry deploy_v2 --workspace-fqn v1:local:my-ws-2
+name: service
+type: service
+image:
+  type: build
+  build_source:
+    type: local
+  build_spec:
+    type: tfy-python-buildpack
+    build_context_path: ./
+    command: uvicorn main:app --port 4000 --host 0.0.0.0
+    pip_packages:
+      - fastapi
+      - uvicorn
+    python_version: '3.9'
+ports:
+- expose: true
+  port: 4000
+replicas: 2
+resources:
+  cpu_limit: 0.5
+  cpu_request: 0.2
+  memory_limit: 512
+  memory_request: 256

@@ -1,0 +1,1 @@
+from servicefoundry.cli.cli_main import create_servicefoundry_cli

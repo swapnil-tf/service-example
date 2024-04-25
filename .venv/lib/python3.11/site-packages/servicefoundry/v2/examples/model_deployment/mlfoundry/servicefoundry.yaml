@@ -1,0 +1,11 @@
+# servicefoundry deploy_v2 --workspace-fqn v1:local:my-ws-2
+name: from-cli-mlf
+type: model-deployment
+model_source:
+  type: tfy-model-registry
+  model_version_fqn: model:truefoundry/user-truefoundry/lightgbm-kserve/iris:2
+resources:
+  cpu_limit: 0.05
+  cpu_request: 0.02
+  memory_limit: 512
+  memory_request: 256

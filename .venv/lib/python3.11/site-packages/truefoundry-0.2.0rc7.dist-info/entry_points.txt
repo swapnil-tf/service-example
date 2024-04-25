@@ -1,0 +1,4 @@
+[console_scripts]
+tfy=truefoundry.cli.__main__:main
+truefoundry=truefoundry.cli.__main__:main
+

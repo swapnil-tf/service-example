@@ -1,0 +1,10 @@
+name: from-cli-hf
+type: model-deployment
+model_source:
+  type: hf-model-hub
+  model_id: t5-small
+resources:
+  cpu_limit: 0.05
+  cpu_request: 0.02
+  memory_limit: 4000
+  memory_request: 2000

@@ -1,0 +1,4 @@
+[console_scripts]
+servicefoundry=servicefoundry.cli.__main__:main
+sfy=servicefoundry.cli.__main__:main
+

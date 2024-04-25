@@ -1,0 +1,16 @@
+name: scheduled
+type: job
+count: 1
+image:
+  type: build
+  build_source:
+    type: local
+    project_root_path: ./
+  build_spec:
+    type: tfy-python-buildpack
+    build_context_path: ./
+    command: python main.py --upto 30
+    python_version: '3.9'
+trigger:
+  type: scheduled
+  schedule: "*/1 * * * *"

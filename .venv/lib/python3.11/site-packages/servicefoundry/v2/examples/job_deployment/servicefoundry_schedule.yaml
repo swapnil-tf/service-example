@@ -1,0 +1,23 @@
+# servicefoundry deploy_v2 --workspace-fqn v1:local:my-ws-2 --file servicefoundry_manual.yaml
+name: my-job-scheduled
+type: job
+count: 1
+image:
+  type: build
+  build_source:
+    type: local
+    project_root_path: ./
+  build_spec:
+    type: tfy-python-buildpack
+    build_context_path: ./
+    command: python main.py --upto 30
+    python_version: '3.9'
+resources:
+  cpu_limit: 0.02
+  cpu_request: 0.02
+  memory_limit: 256
+  memory_request: 256
+trigger:
+  type: scheduled
+  schedule: "*/1 * * * *"
+  concurrency_policy: Forbid
